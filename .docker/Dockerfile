@@ -42,6 +42,10 @@ RUN pip3 install --no-cache-dir --upgrade pip \
 
 # Install ROS 2 Humble packages for simulation
 RUN apt-get update && apt-get install -y --no-install-recommends \
+<<<<<<< HEAD
+=======
+    ros-$ROS_DISTRO-rmw-cyclonedds-cpp \
+>>>>>>> d22e2a4 (initial)
     ros-$ROS_DISTRO-gazebo-ros-pkgs \
     ros-$ROS_DISTRO-gazebo-ros2-control \
     ros-$ROS_DISTRO-nav2-bringup \
@@ -61,6 +65,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-$ROS_DISTRO-ament-cmake \
     ros-$ROS_DISTRO-rviz2 \
     ros-$ROS_DISTRO-ros-gz \
+<<<<<<< HEAD
     ros-$ROS_DISTRO-ros-gz-bridge \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -74,6 +79,21 @@ RUN apt-get update && apt-get install -y lsb-release wget gnupg curl && \
     ignition-fortress \
     ros-humble-ros-gz-sim \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
+=======
+    ros-$ROS_DISTRO-ros-gz-bridge && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install Gazebo Fortress
+RUN apt-get update && apt-get install -y lsb-release wget gnupg curl && \
+    curl -sSL https://packages.osrfoundation.org/gazebo.gpg --output /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg && \
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null && \
+    apt-get update && \
+    apt-get install -y ignition-fortress ros-humble-ros-gz ros-humble-ros-gz-bridge && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+
+
+>>>>>>> d22e2a4 (initial)
 
 # Set up ROS 2 workspace
 WORKDIR /
