@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <world name="hull_world">
+    
+    <!-- Gravity -->
+    <gravity>0 0 -9.81</gravity>
+
+    <!-- Sun -->
+    <include>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Sun</uri>
+    </include>
+
+    <!-- Ground Plane -->
+    <include>
+      <uri>https://fuel.ignitionrobotics.org/1.0/OpenRobotics/models/Ground Plane</uri>
+    </include>
+
+    <!-- Ocean Surface -->
+    <model name="ocean">
+      <static>true</static>
+      <link name="ocean_link">
+        <pose>0 0 0 0 0 0</pose>
+        <visual name="ocean_visual">
+          <geometry>
+            <plane>
+              <size>500 500</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Water</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ✅ Spawn the Hull Model -->
+    <include>
+      <uri>model://hull_model</uri>
+      <pose>0 0 0.25 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>
