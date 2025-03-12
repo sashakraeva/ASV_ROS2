@@ -12,7 +12,7 @@ The tutorials made so far:
 - [Moving the robot](https://gazebosim.org/docs/fortress/moving_robot/)
 
 Current result looks like this:
-![alt text](/hull_ws/src/images/image.png)
+![alt text](/images/image.png)
 
 
 ## Requirements
@@ -138,11 +138,21 @@ ros2 launch hull_simulation simulation_launch.py
 
 ## Trubleshooting
 
+### Path problems
+
 you may need to add some paths to: 
 
 ``` bash
 code ~/.bashrc
 ``` 
+
+### To clean the docker images u dont use
+
+```bash
+docker system prune
+```
+
+
 
 
 
