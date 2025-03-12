@@ -7,6 +7,10 @@ The project aims to create a digital twin of ASV using ROS2 Humble and Gazebo Fo
 
 Currently we are testing our project on tutorial from [Gazebo Fortress](https://gazebosim.org/docs/fortress/tutorials/) 
 
+P.s. These tutorials are not for Hull, but for robots and gazebo in gneral
+
+P.s. For now our "FUTURE HULL" looks a bit silly (check the image below)
+
 The tutorials made so far:
 - [Building your own robot](https://gazebosim.org/docs/fortress/building_robot/)
 - [Moving the robot](https://gazebosim.org/docs/fortress/moving_robot/)
