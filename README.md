@@ -114,7 +114,7 @@ ign gazebo building_robot.sdf
 
 - Inside Gazebo click on the right top corner three dots and type Key Publisher
 - Press play in left down corner
-- Press up arrow on your keypad 
+- Press arrow on your keypad 
 
 This will make our robot move
 
@@ -143,6 +143,88 @@ ros2 launch hull_simulation simulation_launch.py
 - Press up arrow on your keypad 
 
 This will make our robot move
+
+
+### OTHER FILES
+
+### 01_With_Sensors (IMU, Contact, LiDAR)
+
+sensor_tutorial.sdf
+/hull_ws/src/hull_simulation/worlds/sensor_tutorial.sdf
+
+1) In first terminal:
+
+``` bash
+ign gazebo sensor_tutorial.sdf
+```
+2) Check IMU sensor values
+
+In second terminal:
+
+``` bash
+ign topic -e -t /imu
+```
+
+Inside gazebo window:
+
+```
+- Klick on the right top corner three dots and type Key Publisher
+- Press play in left down corner
+- Press arrow on your keypad 
+- check second terminal values
+```
+
+In second terminal you will recieve values like: 
+
+``` 
+header {
+  stamp {
+    sec: 36
+  }
+  data {
+    key: "frame_id"
+    value: "vehicle_blue::chassis::imu_sensor"
+  }
+  data {
+    key: "seq"
+    value: "36"
+  }
+}
+entity_name: "vehicle_blue::chassis::imu_sensor"
+orientation {
+  x: 7.9718030854165078e-07
+  y: 8.39381347583856e-07
+  z: 8.6009772919773909e-13
+  w: 0.99999999999933
+}
+```
+
+3) Check Contact sensor values
+
+In second terminal:
+
+``` bash
+ign topic -e -t /wall/touched
+```
+
+Inside gazebo window:
+
+```
+- Klick on the right top corner three dots and type Key Publisher
+- Press play in left down corner
+- Press arrow on your keypad 
+- try to crash into the wall
+- check second terminal values
+```
+
+In second terminal you will recieve values like: 
+
+```
+"data: true" - meaning that you heated the wall
+```
+
+
+
 
 
 ## Trubleshooting
