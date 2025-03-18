@@ -225,8 +225,6 @@ In second terminal you will recieve values like:
 
 
 
-
-
 ## Trubleshooting
 
 ### Path problems
