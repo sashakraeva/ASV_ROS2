@@ -117,7 +117,6 @@ ign gazebo building_robot.sdf
 - Press up arrow on your keypad 
 
 This will make our robot move
-P.s. robot is not smart yet, it can only move forward and cant stop
 
 
 ### 9. Run Gazebo with ROS
@@ -138,6 +137,12 @@ source install/setup.bash
 ``` bash
 ros2 launch hull_simulation simulation_launch.py
 ```
+
+- Inside Gazebo click on the right top corner three dots and type Key Publisher
+- Press play in left down corner
+- Press up arrow on your keypad 
+
+This will make our robot move
 
 
 ## Trubleshooting
